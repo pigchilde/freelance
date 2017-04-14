@@ -1,0 +1,16 @@
+{
+  "apps": [{
+    "name": "F:thinkjsF:thinkjsfreelance",
+    "script": "www/production.js",
+    "cwd": "F:\thinkjs\freelance",
+    "exec_mode": "cluster",
+    "instances": 0,
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
