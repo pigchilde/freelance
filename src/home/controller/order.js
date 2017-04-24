@@ -1,39 +1,14 @@
 'use strict';
-/**
- * rest controller
- * @type {Class}
- */
-export default class extends think.controller.rest {
+
+import Base from './base.js';
+
+export default class extends Base {
   /**
-   * init
-   * @param  {Object} http []
-   * @return {}      []
+   * index action
+   * @return {Promise} []
    */
-  init(http){
-    super.init(http);
-  }
-  
-  /**
-   * postAction
-   */
-  async postAction() {
-    if(this.isPost()) {
-      let data = this.post();
-
-      let isAdd = await this.model('order').where({telephone:data.telephone}).find();
-
-      //判断用户是否提交过
-      if(!think.isEmpty(isAdd)) {
-         return this.fail("该用户已经提交过信息了！");
-      }
-
-      let result = this.model('order').add(data);
-
-      if(result){
-        return this.success(result);;
-      }else {
-        return this.fail("添加失败！")
-      }
-    }
+  indexAction(){
+    //auto render template file index_index.html
+    return this.display();
   }
 }

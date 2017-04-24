@@ -1,48 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>New ThinkJS Application</title>
-<style>
-*{padding: 0;margin: 0;font-size: 16px;line-height: 20px;font-family: arial;}
-a, a:visited{color:#337ab7;text-decoration: none;}
-header{padding: 70px 0 70px 0;background-color: #4A6495}
-h1{font-size: 36px;color:#fff;font-weight: normal;}
-code{  padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;border-radius: 4px;}
-.content{width: 1000px;margin: auto}
-.wrap{width: 1000px;margin: auto}
-.content{margin-top: 80px;}
-.list{width: 800px;}
-.list .item{position: relative;padding-left: 70px;margin-top: 50px;}
-.list .item .step{position: absolute;width: 36px;height: 36px;top:-3px;left:0;border: 5px solid #4A6495;border-radius: 23px;text-align: center;line-height: 36px;}
-.list .item h2{font-size: 24px;font-weight: normal;}
-.list .item p{line-height: 30px;margin-top: 10px}
-</style>
+     <% include ../include/meta.html %>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <h1>A New App Created By ThinkJS</h1>
+    <div class="banner">
+        <div class="main-top">
+            <div class="top clearfix">
+                <div class="img"><a href="index.html" title="网云"><img class="logo" src="/static/img/toplogo.png"></a></div>
+                <ul class="top-nav clearfix">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="###">成功案例</a></li>
+                    <li><a href="###">使用指南</a></li>
+                </ul>
+                <div class="search clearfix">
+                    <input type="text" class="text" placeholder="输入需求关键字" />
+                    <button class="find iconfont">&#xe601;</button>
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg"></div>
+        <div class="publish">
+            <div class="demand kao">
+                <a href="publish.html">免费发布需求</a>
+            </div>
+        </div>
+        <div class="surface">
+            <h2>VR优质产品服务，专业的服务咨询项目对接</h2>
+            <p>发布需求，立享遍布全国的产品服务支持</p>
+        </div>
     </div>
-  </header>
-  <div class="content">
-    <div class="list">
-      <div class="item">
-        <div class="step">1</div>
-        <h2>Generate Files</h2>
-        <p>Run <code>thinkjs</code> command to create module, controler, model, service and so on. visit <a href="https://thinkjs.org/doc/thinkjs_command.html">https://thinkjs.org/doc/thinkjs_command.html</a> to view more infomation.</p>
-      </div>
-      <div class="item">
-        <div class="step">2</div>
-        <h2>Documentation</h2>
-        <p>ThinkJS has html and pdf documents. visit <a href="https://thinkjs.org/doc.html">https://thinkjs.org/doc.html</a></p>
-      </div>
-      <div class="item">
-        <div class="step">3</div>
-        <h2>WebSocket</h2>
-        <p>ThinkJS support <code>socket.io</code> and <code>sockjs</code> WebSocket client and server node. visit <a href="https://thinkjs.org/doc/adapter_websocket.html">https://thinkjs.org/doc/adapter_websocket.html</a></p>
-      </div>
+    <div class="productList product">
+        <p class="text">VR行业里最优质的成功案例都在这里<span class="more"><a href="###">more > </a></span></p>
+        <ul class="clearfix">
+            <li class="noleft">
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">10000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li>
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li>
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li>
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li class="noleft">
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li>
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li>
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+            <li>
+                <div class="imgandtext">
+                    <img src="/static/img/test.jpg">
+                    <p class="bottom">VR内容远程控制技术</p>
+                </div>
+                <p class="worthandtime clearfix">
+                    <span class="worth">20000元起</span>
+                    <span class="borwse">浏览：810</span>
+                </p>
+            </li>
+        </ul>
     </div>
-  </div>
+    <div class="interestprotection">
+        <div class="main clearfix">
+            <ol>
+                <li class="title">
+                    <span class="iconfont"></span>人工审核所有产品及需求
+                </li>
+                <li class="guaranteeone">每一个发布的项目都必须通过平台的人工审核，确保项目靠谱真实，需求清晰。</li>
+                <li class="guaranteetwo">每一位申请入驻的专家都必须满足平台的人才标准；3年及以上工作经验，至少2项作品案例，为满足条件但能力突出者需特殊申请。</li>
+                <li>只有通过审核的专家，才可以在平台上申请项目。</li>
+            </ol>
+            <ol class="ol-center">
+                <li class="title"><span class="iconfont"></span>为你做资金担保</li>
+                <li class="guaranteeone">平台会为项目方和专家进行资金担保，保障双方的利益。</li>
+                <li class="guaranteetwo">项目方支付项目款到平台后，专家才开始执行项目。</li>
+                <li>专家交付项目、项目方确认验收后，平台才会将款项付给专家。</li>
+            </ol>
+            <ol>
+                <li class="title"><span class="iconfont"></span>全程为你做专业监督</li>
+                <li class="guaranteeone">在项目过程中，平台进行全程的专业监管，以保障项目顺利执行。</li>
+                <li class="guaranteetwo">当双方遇到问题纠纷时，平台会全力协调处理。</li>
+            </ol>
+        </div>
+    </div>
+   <% include ../include/footer.html %>
 </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <% include ../include/meta.html %>
+</head>
+<body>
+	<div class="main-top-publish">
+		<div class="top clearfix">
+			<h1><a href="index.html"><img class="logo" src="img/publishlogo.png"></a></h1>
+			<div class="find clearfix">
+				<i class="iconfont">&#xe601;</i>
+				<input type="text" class="condition" placeholder="输入产品/需求关键字" />
+				<button class="determine">搜索</button>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<div class="main-nav">
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="###">成功案例</a></li>
+				<li class="pitch-on"><a href="###">项目需求</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-form">
+		<div class="main">
+			<p class="edit-title">发布需求</p>
+			<div class="operation-area">
+				<p class="name">需求名称</p>
+				<input type="text" placeholder="请输入需求名称，如：VR样板间" class="demandName"/>
+				<p class="name">企业名</p>
+				<input type="text" placeholder="请输入你的企业名" class="companyName" />
+				<p class="name">联系电话</p>
+				<input type="text" placeholder="请输入你的联系电话" class="phone" />
+				<p class="name place">地点</p>
+				<div class="choice">
+					<div class="parent">
+						<select id="c_country" name="c_country" class="dfinput">
+							<option>中国</option>
+							<option>美国</option>
+							<option>欧洲</option>
+							<option>日韩</option>
+							<option>以色列</option>
+							<option>其他</option>
+						</select>
+					</div>
+					<div class="parent">
+						<select id="c_province" name="c_province" class="dfinput">
+							<option>请选择省份</option>
+						</select>
+					</div>
+					<div class="parent">
+						<select id="c_city" name="c_city" class="dfinput">
+							<option>请选择城市</option>
+						</select>
+					</div>
+				</div>
+				<p class="name place">预算（元）</p>
+				<div class="choice">
+					<input type="text" class="priceRange1" placeholder="请输入预算" maxlength="9" />
+					<div class="clear"></div>
+				</div>
+				<p class="name place">工期（周）</p>
+				<div class="choice clearfix">
+					<input type="text" class="jobRange1" placeholder="最少工期" />
+					<input type="text" class="jobRange2" placeholder="最多工期" />
+				</div>
+				<p class="name place">产品分类和行业方向</p>
+				<div class="class-direction clearfix">
+					<div class="class auto-width clearfix">
+						<p>分类</p>
+						<div class="parent">
+							<select class="classarea">
+								<option id="0">请选择</option>
+								<option id="51">硬件设备</option>
+								<option id="52">软件开发</option>
+								<option id="53">内容服务</option>
+								<option id="54">3D建模</option>
+								<option id="55">多媒体展示</option>
+								<option id="58">租赁服务</option>
+						  	</select>
+						</div>
+						<div class="parent hide">
+						  <select class="classarea">
+
+						  </select>
+						</div>
+					</div>
+					<div class="direction block">
+						<p>方向</p>
+						<div class="parent">
+							<select class="zhiArea">
+								<option>请选择</option>
+								<option">教育出版</option>
+								<option>医疗健康</option>
+								<option>旅游</option>
+								<option>广告创意</option>
+								<option>工业</option>
+								<option>农业</option>
+								<option>物流</option>
+								<option>房产建筑</option>
+								<option>汽车</option>
+								<option>军工</option>
+								<option>休闲娱乐</option>
+								<option>文化艺术</option>
+								<option>舞台展览</option>
+								<option>其他</option>
+								<option>通用</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<p class="name">需求描述</p>
+				<textarea class="describe" spellcheck="false"></textarea>
+				<p class="about-data">相关资料</p>
+				<div class="data-area">
+
+				</div>
+				<div class="updata">
+					<span>点击上传</span>，可上传文档、图片和视频等文件，大小在5Mb以内
+					<form id="form1" method="post" enctype="multipart/form-data">
+				         <input type="file" name="inputFile" class="file"/>
+				         <input type="hidden" name="type" value="1" />
+					 </form>
+				</div>
+				<button class="submit">保存并发布</button>
+
+			</div>
+		</div>
+	</div>
+	<% include ../include/footer.html %>
+</body>
+</html>
