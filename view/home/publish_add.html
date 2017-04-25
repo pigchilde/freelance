@@ -26,14 +26,15 @@
 	<div class="main-form">
 		<div class="main">
 			<p class="edit-title">发布需求</p>
+			<form action="/home/publish/add" method="post">
 			<div class="operation-area">
 				<p class="name">需求名称</p>
-				<input type="text" placeholder="请输入需求名称，如：VR样板间" class="demandName"/>
+				<input type="text" name="name" placeholder="请输入需求名称，如：VR样板间" class="demandName"/>
 				<p class="name">企业名</p>
-				<input type="text" placeholder="请输入你的企业名" class="companyName" />
+				<input type="text" name="company" placeholder="请输入你的企业名" class="companyName" />
 				<p class="name">联系电话</p>
-				<input type="text" placeholder="请输入你的联系电话" class="phone" />
-				<p class="name place">地点</p>
+				<input type="text" name="telephone" placeholder="请输入你的联系电话" class="phone" />
+				<!--<p class="name place">地点</p>
 				<div class="choice">
 					<div class="parent">
 						<select id="c_country" name="c_country" class="dfinput">
@@ -55,18 +56,18 @@
 							<option>请选择城市</option>
 						</select>
 					</div>
-				</div>
+				</div>-->
 				<p class="name place">预算（元）</p>
 				<div class="choice">
-					<input type="text" class="priceRange1" placeholder="请输入预算" maxlength="9" />
+					<input type="text" name="budget" class="priceRange1" placeholder="请输入预算" maxlength="9" />
 					<div class="clear"></div>
 				</div>
 				<p class="name place">工期（周）</p>
 				<div class="choice clearfix">
-					<input type="text" class="jobRange1" placeholder="最少工期" />
-					<input type="text" class="jobRange2" placeholder="最多工期" />
+					<input type="text" name="maximum_duration" class="jobRange1" placeholder="最少工期" />
+					<input type="text" name="minimum_duration" class="jobRange2" placeholder="最多工期" />
 				</div>
-				<p class="name place">产品分类和行业方向</p>
+				<!--<p class="name place">产品分类和行业方向</p>
 				<div class="class-direction clearfix">
 					<div class="class auto-width clearfix">
 						<p>分类</p>
@@ -110,10 +111,10 @@
 							</select>
 						</div>
 					</div>
-				</div>
+				</div>-->
 				<p class="name">需求描述</p>
-				<textarea class="describe" spellcheck="false"></textarea>
-				<p class="about-data">相关资料</p>
+				<textarea class="describe" name="description" spellcheck="false"></textarea>
+				<!--<p class="about-data">相关资料</p>
 				<div class="data-area">
 
 				</div>
@@ -123,9 +124,9 @@
 				         <input type="file" name="inputFile" class="file"/>
 				         <input type="hidden" name="type" value="1" />
 					 </form>
-				</div>
-				<button class="submit">保存并发布</button>
-
+				</div>-->
+				<button class="submit">发布</button>
+				</form>
 			</div>
 		</div>
 	</div>
