@@ -6,7 +6,7 @@
 <body>
 	<div class="main-top-publish">
 		<div class="top clearfix">
-			<h1><a href="index.html"><img class="logo" src="/static/img/publishlogo.png"></a></h1>
+			<h1><a href="/"><img class="logo" src="/static/img/publishlogo.png"></a></h1>
 			<div class="find clearfix">
 				<i class="iconfont">&#xe601;</i>
 				<input type="text" class="condition" placeholder="输入产品/需求关键字" />
@@ -26,7 +26,7 @@
 	<div class="main-form">
 		<div class="main">
 			<p class="edit-title">发布需求</p>
-			<form action="/home/publish/add" method="post">
+			<form id="publishForm">
 			<div class="operation-area">
 				<p class="name">需求名称</p>
 				<input type="text" name="name" placeholder="请输入需求名称，如：VR样板间" class="demandName"/>
@@ -125,61 +125,33 @@
 				         <input type="hidden" name="type" value="1" />
 					 </form>
 				</div>-->
-				<button class="submit">发布</button>
+				<button class="submit" type="submit">发布</button>
 				</form>
 			</div>
 		</div>
 	</div>
 	<% include ../include/footer.html %>
-	<script src="/static/admin/js/jquery.min.js"></script>
+	<script src="/static/js/jquery.min.js"></script>
 	<script>
     $(function () {
-        var handlerEmbed = function (captchaObj) {
+		$("#publishForm").submit(function(e) {
 
-            $("#validate-submit").click(function (e) {
-                var validate = captchaObj.getValidate();
-                if (!validate) {
-                    $("#notice").addClass("show").removeClass("hide");
-                    setTimeout(function () {
-                        $("#notice").addClass("hide").removeClass("show");
-                    }, 2000);
-                    e.preventDefault();
-                }
+			$.ajax({
+				type: "POST",
+				url: "/home/publish/add/",
+				data: $("#publishForm").serialize(), 
+				success: function(data){
+					console.log(data);
+					if(data.errno === 0){
+						alert('信息提交成功！')
+					}else{
+						alert(data.errmsg);
+					}
+				}
+			});
 
-            });
-
-            // 将验证码加到id为captcha的元素里
-            captchaObj.appendTo("#captcha");
-
-            captchaObj.onReady(function () {
-                $("#wait")[0].className = "hide";
-            });
-
-            // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
-        };
-
-                $.ajax({
-                    // 获取id，challenge，success（是否启用failback）
-                    url: "/admin/public/geetest?t=" + (new Date()).getTime(), // 加随机数防止缓存
-                    type: "get",
-                    dataType: "json",
-                    success: function (data) {
-
-                        // 使用initGeetest接口
-                        // 参数1：配置参数
-                        // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它做appendTo之类的事件
-                        initGeetest({
-                            gt: data.gt,
-                            challenge: data.challenge,
-                            product: "float", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
-                            offline: !data.success // 表示用户后台检测极验服务器是否宕机，一般不需要关注
-                        }, handlerEmbed);
-                    }
-                });
-
-
-
-
+			e.preventDefault(); 
+		});
     })
 </script>
 

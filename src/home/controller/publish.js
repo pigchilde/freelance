@@ -4,18 +4,28 @@ import Base from './base.js';
 
 export default class extends Base {
 
+  /**
+   * index action
+   * @return {Promise} []
+   */
+  indexAction(){
+    //auto render template file index_index.html
+    return this.display();
+  }
+
+
    /**
    * 添加需求发布
    */
   async addAction(){
+
     if(this.isPost()){
+
       let data = this.post();
 
       //判断需求名称,联系电话，需求描述是否为空
       if(data.name === '' || data.telephone === '' || data.description == ''){
-         this.assign('msg', '需求名称,联系电话，需求描述不能为空！');
-         return this.display("add");//错误信息渲染至登录页面
-        //return this.fail('需求名称,联系电话，需求描述不能为空！');
+         return this.fail('需求名称,联系电话，需求描述不能为空！');
       }
       
       //判断同个电话是否提交过需求
@@ -29,10 +39,10 @@ export default class extends Base {
 
       return this.success(data);
 
-    }else{
+    }else {
 
       return this.display();
-
+      
     }
   }
 
