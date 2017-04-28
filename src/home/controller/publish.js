@@ -32,18 +32,29 @@ export default class extends Base {
       let isExistence = await this.model('publish').where({telephone : data.telephone}).find();
       
       if(think.isEmpty(isExistence)) {
+        data.creat_time = new Date().getTime();
         await this.model('publish').add(data);
       }else{
         return this.fail('该电话号码已经提交过需求了！');
       }
 
-      return this.success(data);
+      return this.redirect('/publish/success/');
 
     }else {
 
       return this.display();
       
     }
+
+  }
+
+  /**
+ * index action
+ * @return {Promise} []
+ */
+  async successAction(){
+    //auto render template file index_index.html
+    return this.display();
   }
 
 }

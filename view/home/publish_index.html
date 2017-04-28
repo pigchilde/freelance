@@ -26,7 +26,7 @@
 	<div class="main-form">
 		<div class="main">
 			<p class="edit-title">发布需求</p>
-			<form id="publishForm">
+			<form id="publishForm" method="post" action="/publish/add/">
 			<div class="operation-area">
 				<p class="name">需求名称</p>
 				<input type="text" name="name" placeholder="请输入需求名称，如：VR样板间" class="demandName"/>
@@ -131,7 +131,7 @@
 		</div>
 	</div>
 	<% include ../include/footer.html %>
-	<script src="/static/js/jquery.min.js"></script>
+	<!--<script src="/static/js/jquery.min.js"></script>
 	<script>
     $(function () {
 		$("#publishForm").submit(function(e) {
@@ -143,7 +143,8 @@
 				success: function(data){
 					console.log(data);
 					if(data.errno === 0){
-						alert('信息提交成功！')
+						
+						location.href = '/';
 					}else{
 						alert(data.errmsg);
 					}
@@ -152,7 +153,7 @@
 
 			e.preventDefault(); 
 		});
-    })
+    })-->
 </script>
 
 </body>

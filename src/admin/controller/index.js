@@ -13,7 +13,6 @@ export default class extends Base {
    */
   async indexAction(){
     let listData = await this.model('publish').field('id, name, creat_time').select();
-    console.log(listData);
     this.assign('listData', listData);
     
     return this.display();
